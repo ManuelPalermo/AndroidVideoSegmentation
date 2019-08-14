@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidSegmentation</string>
+    <string name="imageView">imageView</string>
+    <string name="btnSegment">Segment</string>
+    <string name="classesString">Classes: </string>
+    <string name="inferenceString">Inference(ms): </string>
+</resources>
