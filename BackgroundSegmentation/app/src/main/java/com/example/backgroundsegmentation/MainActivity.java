@@ -22,6 +22,8 @@ import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
 import java.io.IOException;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     Mat inframe;
     Mat modelMat;
+    Mat upModelMat;
     Mat resized;
     Mat outputFrame;
     ArrayList<String> classesFound;
@@ -141,6 +144,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
         inframe = new Mat(cameraHeight, cameraWidth, CvType.CV_8UC3);
         modelMat = new Mat(256, 256, CvType.CV_8UC3);
+        upModelMat = new Mat(cameraHeight, cameraHeight, CvType.CV_8UC3);
         resized = new Mat(cameraHeight, cameraWidth, CvType.CV_8UC3);
         outputFrame = new Mat(cameraHeight, cameraWidth, CvType.CV_8UC4);
         classesFound = new ArrayList<>();
@@ -150,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         Log.i("onCameraViewStopped: " ,"Camera view has stopped, releasing resources");
         inframe.release();
         modelMat.release();
+        upModelMat.release();
         resized.release();
         outputFrame.release();
     }
@@ -159,15 +164,21 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         // convert to rgb image
         Imgproc.cvtColor(inputFrame.rgba(), inframe, Imgproc.COLOR_RGBA2RGB);
 
-        // downsize image
-        Imgproc.resize(inframe, modelMat, modelMat.size(), 0, 0, Imgproc.INTER_LANCZOS4);
+        // crop image(to square shape) and downsize image
+        Imgproc.resize(new Mat(inframe, new Rect((int)(cameraWidth*0.25), 0, cameraHeight, cameraHeight)),
+                modelMat, modelMat.size(), 0, 0, Imgproc.INTER_LANCZOS4);
 
         // segment image
         classesFound.clear();
         segModel.segmentImage(modelMat, classesFound);
 
         // return segmentation to original image size
-        Imgproc.resize(modelMat, resized, resized.size(), 0, 0, Imgproc.INTER_CUBIC);
+        Imgproc.resize(modelMat, upModelMat, upModelMat.size(), 0, 0, Imgproc.INTER_CUBIC);
+
+        // reshape image to original shape
+        Core.copyMakeBorder(upModelMat, resized,
+                    0, 0, (cameraWidth-cameraHeight)/2, (cameraWidth-cameraHeight)/2,
+                    Core.BORDER_CONSTANT, new Scalar(0));
 
         // blend segmentation with camera frame
         Core.addWeighted(inframe, 0.5, resized, 0.5, 0.0, outputFrame);

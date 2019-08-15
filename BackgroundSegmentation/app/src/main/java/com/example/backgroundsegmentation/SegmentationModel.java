@@ -58,25 +58,25 @@ public class SegmentationModel {
         outImg = new long[DIM_BATCH_SIZE][DIM_HEIGHT * DIM_WIDTH * OUTCHANNELS];
 
         colors[0]  = new int[]{0,   0,   0  };  displayClass[0]  = false; classNames[0]  = "bg";
-        colors[1]  = new int[]{128, 0,   0  };  displayClass[1]  = true;  classNames[1]  = "aeroplane";
+        colors[1]  = new int[]{128, 0,   0  };  displayClass[1]  = false; classNames[1]  = "aeroplane";
         colors[2]  = new int[]{0,   128, 0  };  displayClass[2]  = true;  classNames[2]  = "bicycle";
-        colors[3]  = new int[]{128, 128, 0  };  displayClass[3]  = true;  classNames[3]  = "bird";
-        colors[4]  = new int[]{0,   0,   128};  displayClass[4]  = true;  classNames[4]  = "boat";
+        colors[3]  = new int[]{128, 128, 0  };  displayClass[3]  = false; classNames[3]  = "bird";
+        colors[4]  = new int[]{0,   0,   128};  displayClass[4]  = false; classNames[4]  = "boat";
         colors[5]  = new int[]{128, 0,   128};  displayClass[5]  = true;  classNames[5]  = "bottle";
         colors[6]  = new int[]{0,   128, 128};  displayClass[6]  = true;  classNames[6]  = "bus";
         colors[7]  = new int[]{128, 128, 128};  displayClass[7]  = true;  classNames[7]  = "car";
         colors[8]  = new int[]{64,  0,   0  };  displayClass[8]  = true;  classNames[8]  = "cat";
         colors[9]  = new int[]{192, 0,   0  };  displayClass[9]  = true;  classNames[9]  = "chair";
-        colors[10] = new int[]{64,  128, 0  };  displayClass[10] = true;  classNames[10] = "cow";
-        colors[11] = new int[]{192, 128, 0  };  displayClass[11] = true;  classNames[11] = "diningtable";
+        colors[10] = new int[]{64,  128, 0  };  displayClass[10] = false; classNames[10] = "cow";
+        colors[11] = new int[]{192, 128, 0  };  displayClass[11] = true;  classNames[11] = "table";
         colors[12] = new int[]{64,  0,   128};  displayClass[12] = true;  classNames[12] = "dog";
-        colors[13] = new int[]{192, 0,   128};  displayClass[13] = true;  classNames[13] = "horse";
+        colors[13] = new int[]{192, 0,   128};  displayClass[13] = false; classNames[13] = "horse";
         colors[14] = new int[]{64,  128, 128};  displayClass[14] = true;  classNames[14] = "motorbike";
         colors[15] = new int[]{192, 128, 128};  displayClass[15] = true;  classNames[15] = "person";
-        colors[16] = new int[]{0,   64,  0  };  displayClass[16] = true;  classNames[16] = "potted plant";
-        colors[17] = new int[]{128, 64,  0  };  displayClass[17] = true;  classNames[17] = "sheep";
+        colors[16] = new int[]{0,   64,  0  };  displayClass[16] = true;  classNames[16] = "plant";
+        colors[17] = new int[]{128, 64,  0  };  displayClass[17] = false;  classNames[17] = "sheep";
         colors[18] = new int[]{0,   192, 0  };  displayClass[18] = true;  classNames[18] = "sofa";
-        colors[19] = new int[]{128, 192, 0  };  displayClass[19] = true;  classNames[19] = "train";
+        colors[19] = new int[]{128, 192, 0  };  displayClass[19] = false;  classNames[19] = "train";
         colors[20] = new int[]{0,   64,  128};  displayClass[20] = true;  classNames[20] = "tv/monitor";
     }
 
