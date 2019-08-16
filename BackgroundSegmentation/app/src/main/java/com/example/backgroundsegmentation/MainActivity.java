@@ -175,9 +175,9 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         // return segmentation to original image size
         Imgproc.resize(modelMat, upModelMat, upModelMat.size(), 0, 0, Imgproc.INTER_CUBIC);
 
-        // reshape image to original shape
+        // reshape segmentation to original image shape(and try to match it)
         Core.copyMakeBorder(upModelMat, resized,
-                    0, 0, (cameraWidth-cameraHeight)/2, (cameraWidth-cameraHeight)/2,
+                    0, 0, (cameraWidth-cameraHeight)/2+(cameraHeight/23), (cameraWidth-cameraHeight)/2-(cameraHeight/23),
                     Core.BORDER_CONSTANT, new Scalar(0));
 
         // blend segmentation with camera frame
