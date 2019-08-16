@@ -3,7 +3,7 @@ Android video semantic segmentation using OpenCV(for image preprocessing and cam
 
 <br></br>
 ## Demos
-<img src="Demos/person.gif" alt="person" width="300" height="533">
+<img src="Demos/person.gif" alt="person" width="150" height="267">
 ![person]( =250x250)
 ![walking](Demos/walking.gif =250x250)
 ![dog](Demos/dog.gif)
