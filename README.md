@@ -3,7 +3,7 @@ Android video semantic segmentation using OpenCV(for image preprocessing and cam
 
 <br></br>
 ## Demos
-[Imgur](https://i.imgur.com/9g3kwG7.gifv)
+![](https://i.imgur.com/9g3kwG7.gifv)
 [Imgur](https://i.imgur.com/cbRN3sf.gifv)
 [Imgur](https://i.imgur.com/TOEUYMN.gifv)
 [Imgur](https://i.imgur.com/7Y8b51M.gifv)
