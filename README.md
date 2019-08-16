@@ -3,12 +3,16 @@ Android video semantic segmentation using OpenCV(for image preprocessing and cam
 
 <br></br>
 ## Demos
-<img src="Demos/person.gif" alt="person" width="200" height="355">
-<img src="Demos/walking.gif" alt="walking" width="200" height="355">
-<img src="Demos/dog.gif" alt="dog" width="200" height="355">
-<img src="Demos/plants.gif" alt="plants" width="200" height="355">
-<img src="Demos/sofa.gif" alt="sofa" width="200" height="355">
-<img src="Demos/table_chairs.gif" alt="table_chairs" width="200" height="355">
+p {
+    display: inline;
+    <img src="Demos/person.gif" alt="person" width="200" height="355">
+    <img src="Demos/walking.gif" alt="walking" width="200" height="355">
+    <img src="Demos/dog.gif" alt="dog" width="200" height="355">
+    <img src="Demos/plants.gif" alt="plants" width="200" height="355">
+    <img src="Demos/sofa.gif" alt="sofa" width="200" height="355">
+    <img src="Demos/table_chairs.gif" alt="table_chairs" width="200" height="355">
+}
+
 
 ### Helpful Resources:
 * Use of quantized version of deeplab3+(for better inference speed): https://github.com/tantara/JejuNet
