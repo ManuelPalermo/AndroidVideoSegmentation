@@ -1,5 +1,5 @@
 # Android Video Segmentation
-Android video semantic segmentation using OpenCV(for image preprocessing and camera handling) and Google´s trained Deeplab3+(for video frame segmentation).
+Project done in order to learn how to use DeepLearning models in mobile applications. A camera application with real time semantic segmentation was implemented using OpenCV(for image preprocessing and camera handling) and Google´s trained Deeplab3+ model(for video frame segmentation).
 
 <br></br>
 ## Demos
